@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+/* hidden 속성이 display: flex에 덮어씌워지는 문제 방지 */
+[hidden] {
+    display: none !important;
+}
+
 html {
     height: 100%;
 }
