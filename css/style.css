@@ -222,6 +222,7 @@ body {
 .filter-chip[data-color="yellow"] { background: #fbbf24; }
 .filter-chip[data-color="green"]  { background: #4ade80; }
 .filter-chip[data-color="blue"]   { background: #60a5fa; }
+.filter-chip[data-color="navy"]   { background: #000080; }
 .filter-chip[data-color="purple"] { background: #c084fc; }
 
 .filter-chip.active[data-color="all"] {
@@ -307,6 +308,7 @@ body {
 .color--yellow { background: #fbbf24; }
 .color--green  { background: #4ade80; }
 .color--blue   { background: #60a5fa; }
+.color--navy   { background: #000080; }
 .color--purple { background: #c084fc; }
 
 .note-card-body {
@@ -566,6 +568,7 @@ body {
 .color-dot[data-color="yellow"] { background: #fbbf24; }
 .color-dot[data-color="green"]  { background: #4ade80; }
 .color-dot[data-color="blue"]   { background: #60a5fa; }
+.color-dot[data-color="navy"]   { background: #000080; }
 .color-dot[data-color="purple"] { background: #c084fc; }
 
 .color-dot.active {
