@@ -23,16 +23,33 @@
         <!-- 목록 뷰 -->
         <div id="list-view">
             <header class="app-header">
-                <h1 class="app-title">📝 메모장</h1>
-                <input
-                    type="search"
-                    id="search-input"
-                    class="search-input"
-                    placeholder="검색..."
-                    autocomplete="off"
-                    aria-label="메모 검색"
-                >
+                <div class="header-controls">
+                    <input
+                        type="search"
+                        id="search-input"
+                        class="search-input"
+                        placeholder="검색..."
+                        autocomplete="off"
+                        aria-label="메모 검색"
+                    >
+                    <select id="sort-select" class="sort-select" aria-label="정렬 기준">
+                        <option value="updated-desc">최근 수정순</option>
+                        <option value="updated-asc">오래된 수정순</option>
+                        <option value="created-desc">최근 생성순</option>
+                        <option value="title-asc">제목 가나다순</option>
+                    </select>
+                </div>
             </header>
+            <div id="color-filter-bar" class="color-filter-bar">
+                <button class="filter-chip active" data-color="all">전체</button>
+                <button class="filter-chip" data-color="gray"   aria-label="회색"></button>
+                <button class="filter-chip" data-color="red"    aria-label="빨강"></button>
+                <button class="filter-chip" data-color="orange" aria-label="주황"></button>
+                <button class="filter-chip" data-color="yellow" aria-label="노랑"></button>
+                <button class="filter-chip" data-color="green"  aria-label="초록"></button>
+                <button class="filter-chip" data-color="blue"   aria-label="파랑"></button>
+                <button class="filter-chip" data-color="purple" aria-label="보라"></button>
+            </div>
             <div id="notes-container" class="notes-container"></div>
             <button id="fab" class="fab" aria-label="새 메모 작성">＋</button>
         </div>
@@ -41,7 +58,16 @@
         <div id="edit-view" hidden>
             <header class="edit-header">
                 <button id="btn-back" class="btn-icon" aria-label="뒤로">&#8592;</button>
+                <span id="autosave-status" class="autosave-status"></span>
                 <div class="edit-actions">
+                    <button id="btn-star" class="btn-icon btn-star-edit" aria-label="즐겨찾기">&#9734;</button>
+                    <button id="btn-share" class="btn-icon" aria-label="공유">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
+                            <polyline points="16 6 12 2 8 6"/>
+                            <line x1="12" y1="2" x2="12" y2="15"/>
+                        </svg>
+                    </button>
                     <button id="btn-delete" class="btn-delete" hidden aria-label="삭제">삭제</button>
                     <button id="btn-save" class="btn-save" aria-label="저장">저장</button>
                 </div>
@@ -53,6 +79,15 @@
                 placeholder="제목"
                 aria-label="메모 제목"
             >
+            <div id="color-picker" class="color-picker" aria-label="색상 선택">
+                <button class="color-dot" data-color="gray"   aria-label="회색"></button>
+                <button class="color-dot" data-color="red"    aria-label="빨강"></button>
+                <button class="color-dot" data-color="orange" aria-label="주황"></button>
+                <button class="color-dot" data-color="yellow" aria-label="노랑"></button>
+                <button class="color-dot" data-color="green"  aria-label="초록"></button>
+                <button class="color-dot" data-color="blue"   aria-label="파랑"></button>
+                <button class="color-dot" data-color="purple" aria-label="보라"></button>
+            </div>
             <textarea
                 id="edit-body"
                 class="edit-body-input"

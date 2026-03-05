@@ -1,5 +1,5 @@
 // Service Worker — Cache-First 전략
-const CACHE_NAME = 'mobile-memo-v2';
+const CACHE_NAME = 'mobile-memo-v9';
 const URLS_TO_CACHE = [
     './',
     './index.html',
